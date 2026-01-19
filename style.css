@@ -326,6 +326,20 @@ rgba(145, 0, 248, 1)
   .hero {
     background-position: top center;
   }
+
+  .cta-group {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .cta-group .btn {
+    flex: 1;
+    max-width: 10rem;
+  }
+  .btn {
+  width: 100%;
+}
 }
 
 
@@ -392,9 +406,7 @@ rgba(145, 0, 248, 1)
   color: var(--#FFFFFF, rgba(255, 255, 255, 1));
 }
 
-/* ===============================
-   RESPONSIVE BREAKPOINTS
-================================ */
+
 
 /* ≤576px (Small devices) */
 @media (max-width: 576px) {
@@ -434,6 +446,95 @@ rgba(145, 0, 248, 1)
     font-size: 48px;
   }
 }
+
+
+
+
+
+
+body {
+  
+  background: radial-gradient(circle at top, #2a0f4d, #140022);
+  color: #fff;
+}
+
+.why-choose {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 50px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  grid-template-rows: auto auto auto;
+  gap: 24px;
+  grid-template-areas:
+    "card1 card2"
+    "card1 card3"
+    "card4 card5";
+}
+
+.card {
+  background: #2a0f4d;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+.card h3 {
+  margin-top: 16px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.card p {
+  color: #cfc3e6;
+  line-height: 1.6;
+  font-size: 14.5px;
+}
+
+.icon {
+  font-size: 28px;
+  background: linear-gradient(135deg, #ff4fd8, #ffcf4f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Grid Areas */
+.card-1 { grid-area: card1; }
+.card-2 { grid-area: card2; }
+.card-3 { grid-area: card3; }
+.card-4 { grid-area: card4; }
+.card-5 { grid-area: card5; }
+
+.card-4 {
+  padding-right: 60px;
+}
+
+/* 📱 Responsive (Tablet & Mobile) */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "card1"
+      "card2"
+      "card3"
+      "card4"
+      "card5";
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+}
+
 
 
 
@@ -653,14 +754,12 @@ rgba(145, 0, 248, 1)
     gap: 1rem;
     font-size: 1rem;
   }
-  .platforms {
+  .platforms a{
     grid-template-columns: 2, 1fr;
     grid-template-rows: 2, 1fr;
   }
 
-  /* .divider {
-    width: 80%;
-  } */
+  
 }
 
 /* Large devices (≥992px) */
