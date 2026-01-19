@@ -449,7 +449,7 @@ rgba(145, 0, 248, 1)
 
 
 
-
+/* why choose section */
 
 
 body {
@@ -470,22 +470,32 @@ body {
   margin-bottom: 50px;
 }
 
+
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  grid-template-rows: auto auto auto;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, minmax(120px, auto));
   gap: 24px;
-  grid-template-areas:
-    "card1 card2"
-    "card1 card3"
-    "card4 card5";
 }
+
+/* Grid Areas */
+.card-1 { grid-area: 1 / 1 / 5 / 3; }
+.card-2 { grid-area: 1 / 3 / 3 / 7; }
+.card-3 { grid-area: 3 / 3 / 5 / 7; }
+.card-4 { grid-area: 5 / 1 / 7 / 5; }
+.card-5 { grid-area: 5 / 5 / 7 / 7; }
+
 
 .card {
   background: #2a0f4d;
   border-radius: 20px;
   padding: 28px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.card card-1{
+  justify-content: center;
+  align-items: center;
 }
 
 .card h3 {
@@ -500,6 +510,7 @@ body {
   font-size: 14.5px;
 }
 
+
 .icon {
   font-size: 28px;
   background: linear-gradient(135deg, #ff4fd8, #ffcf4f);
@@ -507,33 +518,45 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* Grid Areas */
-.card-1 { grid-area: card1; }
-.card-2 { grid-area: card2; }
-.card-3 { grid-area: card3; }
-.card-4 { grid-area: card4; }
-.card-5 { grid-area: card5; }
-
-.card-4 {
-  padding-right: 60px;
-}
-
-/* 📱 Responsive (Tablet & Mobile) */
-@media (max-width: 900px) {
+@media screen and (max-width: 576px) {
   .grid {
     grid-template-columns: 1fr;
-    grid-template-areas:
-      "card1"
-      "card2"
-      "card3"
-      "card4"
-      "card5";
+    grid-template-rows: auto;
+    gap: 20px;
+  }
+
+  .card-1,
+  .card-2,
+  .card-3,
+  .card-4,
+  .card-5 {
+    grid-area: auto;
   }
 
   .section-title {
     font-size: 28px;
+    margin-bottom: 32px;
+  }
+
+  .card {
+    padding: 22px;
   }
 }
+
+@media screen and (min-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, minmax(120px, auto));
+    gap: 24px;
+  }
+
+  .card-1 { grid-area: 1 / 1 / 5 / 3; }
+  .card-2 { grid-area: 1 / 3 / 3 / 7; }
+  .card-3 { grid-area: 3 / 3 / 5 / 7; }
+  .card-4 { grid-area: 5 / 1 / 7 / 5; }
+  .card-5 { grid-area: 5 / 5 / 7 / 7; }
+}
+
 
 
 
