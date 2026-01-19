@@ -668,6 +668,7 @@ body {
 /* Content */
 .content {
   padding: 20px;
+  text-align: start;
 }
 
 .content h3 {
@@ -825,7 +826,7 @@ rgba(145, 0, 248, 1)
 
 
 .host {
-  padding: 80px 20px;
+  padding: 120px 200px;
   background: radial-gradient(circle at top, #2a0b4f, #12001f);
 }
 
@@ -836,8 +837,8 @@ rgba(145, 0, 248, 1)
 
 .section-title {
   text-align: center;
-  font-size: 36px;
-  margin-bottom: 50px;
+  font-size: 2.2rem;
+  margin-bottom: 3.1rem;
 }
 
 /* Host Card */
@@ -903,6 +904,10 @@ rgba(145, 0, 248, 1)
 
 /* ≤576px */
 @media screen and (max-width: 576px) {
+  .host{
+    padding: 1rem;
+    /* margin: 1.5rem; */
+  }
   .section-title {
     font-size: 28px;
   }
